@@ -1,9 +1,6 @@
-import csv
-import pandas as pd
-import numpy as np
-import xlrd, openpyxl
-from pandas import Series, DataFrame
 import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
 
 plt.rcParams["font.sans-serif"] = ["SimHei"]
 
@@ -29,14 +26,18 @@ plt.show()
 correlations = csv.corr()
 fig = plt.figure()
 
-
 ax = fig.add_subplot(111)
-cax = ax.matshow(correlations, vmin=-1, vmax=1)  # 绘制热力图，从-1到1
-fig.colorbar(cax)  # 将matshow生成热力图设置为颜色渐变条
-ticks = np.arange(0, 9, 1)  # 生成0-9，步长为1
-ax.set_xticks(ticks)  # 生成刻度
+# 绘制热力图，从-1到1
+cax = ax.matshow(correlations, vmin=-1, vmax=1)
+# 将matshow生成热力图设置为颜色渐变条
+fig.colorbar(cax)
+# 生成0-9，步长为1
+ticks = np.arange(0, 9, 1)
+# 生成刻度
+ax.set_xticks(ticks)
 ax.set_yticks(ticks)
 names = ["url,昵称,标题,性别,回答数目,关注者,文章,描述"]
-ax.set_xticklabels(names)  # 生成x轴标签
+# 生成x轴标签
+ax.set_xticklabels(names)
 ax.set_yticklabels(names)
 plt.show()

@@ -8,7 +8,7 @@
 大致思路： 从用户S开始，抓取用户following的信息，再通过dfs来将user_following的following加入爬虫队列，
 构建用户信息的图网络结构
 
-ps: 破解登录参考: (awesome-python-login-model)[https://github.com/CriseLYJ/awesome-python-login-model]
+ps: 破解登录参考: [awesome-python-login-model](https://github.com/CriseLYJ/awesome-python-login-model)
 
 ## 架构设计
 
